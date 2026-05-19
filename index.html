@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ghania Ayad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #f5f0e8;
+      --warm-brown: #3b2a1a;
+      --rust: #c0562a;
+      --teal: #4a8fa3;
+      --muted: #7a6a5a;
+      --card-bg: #fffdf8;
+    }
+
+    body {
+      background-color: var(--cream);
+      background-image: radial-gradient(circle at 80% 10%, rgba(74,143,163,0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 10% 90%, rgba(192,86,42,0.06) 0%, transparent 50%);
+      color: var(--warm-brown);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 60px 20px;
+    }
+
+    .container {
+      max-width: 720px;
+      width: 100%;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Header ── */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      margin-bottom: 52px;
+    }
+
+    .portrait-wrap {
+      flex-shrink: 0;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid var(--rust);
+      box-shadow: 6px 6px 0 var(--teal);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .portrait-wrap:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 8px 8px 0 var(--teal);
+    }
+
+    .portrait-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .header-text h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 600;
+      line-height: 1.1;
+      color: var(--warm-brown);
+    }
+
+    .header-text .tagline {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--rust);
+      font-weight: 500;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      border: none;
+      border-top: 2px solid var(--rust);
+      opacity: 0.25;
+      margin-bottom: 40px;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid rgba(59,42,26,0.1);
+      border-radius: 12px;
+      padding: 36px 40px;
+      box-shadow: 4px 4px 0 rgba(74,143,163,0.18);
+      animation: fadeUp 0.8s 0.15s ease both;
+    }
+
+    .card h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.55rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      color: var(--warm-brown);
+      border-bottom: 2px solid var(--rust);
+      padding-bottom: 10px;
+    }
+
+    /* ── Description List ── */
+    dl {
+      display: grid;
+      row-gap: 0;
+    }
+
+    .dl-row {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      border-bottom: 1px solid rgba(59,42,26,0.08);
+      padding: 14px 0;
+      transition: background 0.2s ease;
+      border-radius: 6px;
+    }
+
+    .dl-row:hover {
+      background: rgba(74,143,163,0.05);
+      padding-left: 8px;
+    }
+
+    .dl-row:last-child {
+      border-bottom: none;
+    }
+
+    dt {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--rust);
+      font-weight: 500;
+      padding-top: 2px;
+    }
+
+    dd {
+      font-size: 1rem;
+      color: var(--warm-brown);
+      font-weight: 300;
+      line-height: 1.55;
+    }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 32px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 520px) {
+      header { flex-direction: column; text-align: center; }
+      .dl-row { grid-template-columns: 1fr; gap: 4px; }
+      dt { font-size: 0.72rem; }
+      .card { padding: 28px 22px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <div class="portrait-wrap">
+        <!-- Replace the src below with the actual path to your photo, e.g. "images/photo.jpg" -->
+        <img src="WhatsApp_Image_2026-05-18_at_22_29_29.jpeg" alt="Portrait of [Your Full Name]" />
+      </div>
+      <div class="header-text">
+        <h1>Ghania Ayad</h1>
+        <p class="tagline">Interactive Media Design &bull; Algonquin College</p>
+      </div>
+    </header>
+
+    <hr class="divider" />
+
+    <div class="card">
+      <h2>About Me</h2>
+      <dl>
+        <div class="dl-row">
+          <dt>Student Number</dt>
+          <dd>41196418</dd>
+        </div>
+        <div class="dl-row">
+          <dt>Program</dt>
+          <dd>Interactive Media Design</dd>
+        </div>
+        <div class="dl-row">
+          <dt>Course</dt>
+          <dd>MTM6201 , Web Development II</dd>
+        </div>
+        <div class="dl-row">
+          <dt>Fun Fact</dt>
+          <dd>I love photography and capturing everyday moments. I enjoy finding the right angle, light, and timing to turn simple scenes into something worth remembering.</dd>
+        </div>
+      </dl>
+    </div>
+
+    <footer>
+      <p>MTM6201 , Interactive Media Design , 2026</p>
+    </footer>
+
+  </div>
+</body>
+</html>
